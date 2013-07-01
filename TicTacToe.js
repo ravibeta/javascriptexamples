@@ -1,26 +1,18 @@
 function GetWinner() {
     var ret = "click me";
     // check horizontals
-//    var v = document.getElementById("Button" + (0 * 3 + 0));
-//    throw v.value;
-//    var val = document.getElementById("Button" + (0 * 3 + 0));
-//    var val2 = val.value;
-//    throw val2;
 
 //    for (var i = 0; i < 3; i = i + 1) {
 //        if (document.getElementById("Button" + (i * 3 + 0)).value != "click me" && document.getElementById("Button" + (i * 3 + 0)).value == document.getElementById("Button" + (i * 3 + 1)).value && document.getElementById("Button" + (i * 3 + 1)) == document.getElementById("Button" + (i * 3 + 2)) {return document.getElementById("Button" + (i * 3 + 0)).value;}
 //    }
-//    throw ret;
 //    // check verticals
 //    for (var j = 0; j < 3; j = j + 1) {
 //        if (document.getElementById("Button" + (0 * 3 + j)).value != "click me" && document.getElementById("Button" + (0 * 3 + j)).value == document.getElementById("Button" + (1 * 3 + j)).value && document.getElementById("Button" + (1 * 3 + j)).value == document.getElementById("Button" + (2 * 3 + j)).value){ return document.getElementById("Button" + (0 * 3 + j)).value;}
 //    }
-//    throw ret + ret;
 //    // check diagonals
 //    if (document.getElementById("Button" + (0 * 3 + 0)).value != "click me" && document.getElementById("Button" + (0 * 3 + 0)).value == document.getElementById("Button" + (1 * 3 + 1)).value && document.getElementById("Button" + (1 * 3 + 1)).value == document.getElementById("Button" + (2 * 3 + 2)).value) {return document.getElementById("Button" + (0 * 3 + 0)).value;}
 //    if (document.getElementById("Button" + (0 * 3 + 2)).value != "click me" && document.getElementById("Button" + (0 * 3 + 2)).value == document.getElementById("Button" + (1 * 3 + 1)).value && document.getElementById("Button" + (1 * 3 + 1)).value == document.getElementById("Button" + (2 * 3 + 0)).value) { return document.getElementById("Button" + (0 * 3 + 2)).value; }
 
-//    throw ret + ret + ret;
     return ret;
 }
 
