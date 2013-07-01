@@ -114,21 +114,10 @@ function GetNextMove(pos) {
         && i + 1 < 3 && document.getElementById("Button" + ((i + 1) * 3 + j)).value == "click me") {return ((i + 1) * 3 + j); }
 
     if (i + 2 < 3 && j - 2 >= 0 && document.getElementById("Button" + ((i + 2) * 3 + j - 2)).value == value 
-        && i + 1 < 3 && j - 2 >= 0 && document.getElementById("Button" + ((i + 1) * 3 + j - 2)).value == "click me") {return ((i + 1) * 3 + j); }
+        && i + 1 < 3 && j - 1 >= 0 && document.getElementById("Button" + ((i + 1) * 3 + j - 1)).value == "click me") {return ((i + 1) * 3 + j - 1); }
 
     if (j - 2 >= 0 && document.getElementById("Button" + ((i) * 3 + j - 2)).value == value 
         && j - 1 >= 0 && document.getElementById("Button" + ((i) * 3 + j - 1)).value == "click me") {return ((i) * 3 + j - 1); }
-
-
-    if (i + 2 < 3 && j + 2 < 3 && document.getElementById("Button" + ((i + 2) * 3 + j + 2)).value == value 
-        && i + 1 >= 0 && j + 1 < 3 && document.getElementById("Button" + ((i + 1) * 3 + j + 1)).value == "click me") {return ((i + 1) * 3 + j + 1); }
-
-    if (i + 2 < 3 && j + 2 < 3 && document.getElementById("Button" + ((i + 2) * 3 + j + 2)).value == value 
-        && i + 1 >= 0 && j + 1 < 3 && document.getElementById("Button" + ((i + 1) * 3 + j + 1)).value == "click me") {return ((i + 1) * 3 + j + 1); }
-
-
-    if (i + 2 >= 0 && document.getElementById("Button" + ((i + 2) * 3 + j)).value == value 
-        && i + 1 >= 0 && document.getElementById("Button" + ((i + 1) * 3 + j)).value == "click me") {return ((i + 1) * 3 + j); }
 
     for (var k = 0; k < 9; k = k + 1){
         if (document.getElementById("Button" + (k)).value == "click me") { return k; }
