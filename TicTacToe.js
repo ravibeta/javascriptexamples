@@ -1,16 +1,19 @@
 function GetWinner() {
     var ret = "click me";
-//    check horizontals
-//    for (var i = 0; i < 3; i = i + 1) {
-//        if (document.getElementById("Button" + (i * 3 + 0)).value != "click me" && document.getElementById("Button" + (i * 3 + 0)).value == document.getElementById("Button" + (i * 3 + 1)).value && document.getElementById("Button" + (i * 3 + 1)) == document.getElementById("Button" + (i * 3 + 2)) {return document.getElementById("Button" + (i * 3 + 0)).value;}
-//    }
-//    // check verticals
-//    for (var j = 0; j < 3; j = j + 1) {
-//        if (document.getElementById("Button" + (0 * 3 + j)).value != "click me" && document.getElementById("Button" + (0 * 3 + j)).value == document.getElementById("Button" + (1 * 3 + j)).value && document.getElementById("Button" + (1 * 3 + j)).value == document.getElementById("Button" + (2 * 3 + j)).value){ return document.getElementById("Button" + (0 * 3 + j)).value;}
-//    }
-//    // check diagonals
-//    if (document.getElementById("Button" + (0 * 3 + 0)).value != "click me" && document.getElementById("Button" + (0 * 3 + 0)).value == document.getElementById("Button" + (1 * 3 + 1)).value && document.getElementById("Button" + (1 * 3 + 1)).value == document.getElementById("Button" + (2 * 3 + 2)).value) {return document.getElementById("Button" + (0 * 3 + 0)).value;}
-//    if (document.getElementById("Button" + (0 * 3 + 2)).value != "click me" && document.getElementById("Button" + (0 * 3 + 2)).value == document.getElementById("Button" + (1 * 3 + 1)).value && document.getElementById("Button" + (1 * 3 + 1)).value == document.getElementById("Button" + (2 * 3 + 0)).value) { return document.getElementById("Button" + (0 * 3 + 2)).value; }
+
+    // check horizontals
+    for (var i = 0; i < 3; i = i + 1) {
+        if (document.getElementById("Button" + ((i * 3) + 0)).value != "click me" && document.getElementById("Button" + ((i * 3) + 0)).value == document.getElementById("Button" + ((i * 3) + 1)).value && document.getElementById("Button" + ((i * 3) + 1)).value == document.getElementById("Button" + ((i * 3) + 2)).value) {return document.getElementById("Button" + ((i * 3) + 0)).value;}
+    }
+
+    // check verticals
+    for (var j = 0; j < 3; j = j + 1) {
+        if (document.getElementById("Button" + ((0 * 3) + j)).value != "click me" && document.getElementById("Button" + ((0 * 3) + j)).value == document.getElementById("Button" + ((1 * 3) + j)).value && document.getElementById("Button" + ((1 * 3) + j)).value == document.getElementById("Button" + ((2 * 3) + j)).value){ return document.getElementById("Button" + ((0 * 3) + j)).value;}
+    }
+
+    // check diagonals
+    if (document.getElementById("Button" + ((0 * 3) + 0)).value != "click me" && document.getElementById("Button" + ((0 * 3) + 0)).value == document.getElementById("Button" + ((1 * 3) + 1)).value && document.getElementById("Button" + ((1 * 3) + 1)).value == document.getElementById("Button" + ((2 * 3) + 2)).value) {return document.getElementById("Button" + ((0 * 3) + 0)).value;}
+    if (document.getElementById("Button" + ((0 * 3) + 2)).value != "click me" && document.getElementById("Button" + ((0 * 3) + 2)).value == document.getElementById("Button" + ((1 * 3) + 1)).value && document.getElementById("Button" + ((1 * 3) + 1)).value == document.getElementById("Button" + ((2 * 3) + 0)).value) { return document.getElementById("Button" + ((0 * 3) + 2)).value; }
 
     return ret;
 }
@@ -41,11 +44,11 @@ function Play(pos) {
 function Set() {
     for (var i = 0; i < 3; i = i + 1) {
         for (var j = 0; j < 3; j = j + 1) {
-            var id = "Button" + i * 3 + j + 1;
+            var id = "Button" + ((i * 3) + j);
             document.getElementById(id).disabled = true;
         }
     }
-    var actionItem = document.getElementById("Button10");
+    var actionItem = document.getElementById("Button9");
     actionItem.disabled = false;
     actionItem.value = "Reset";
 }
@@ -53,13 +56,12 @@ function Set() {
 function Reset() {
     for (var i = 0; i < 3; i = i + 1) {
         for (var j = 0; j < 3; j = j + 1) {
-            var id = "Button" + i * 3 + j + 1;
-            var target = document.getElementById(id);
-            target.disabled = false;
-            target.value = "click me";
+            var id = "Button" + ((i * 3) + j);
+            document.getElementById(id).value = "click me";
+            document.getElementById(id).disabled = false;
         }
     }
-    var actionItem = document.getElementById("Button10");
+    var actionItem = document.getElementById("Button9");
     actionItem.disabled = true;
     actionItem.value = "Play";
 }
@@ -126,21 +128,4 @@ function getButton(pos) {
 
 function getButton(i,j) {
     return document.getElementById("Button" + (i * 3 + j));
-}
-
-function checkLastMove(i, j, c) {
-    var gameOver = false;
-    if (i - 1 >= 0 && j - 1 >= 0 && i + 1 <= 2 && j + 1 <= 2 && document.getElementById("Button" + ((i - 1) * 3 + j - 1)).value == c && c == document.getElementById("Button" + ((i + 1) * 3 + j + 1)).value) return gameOver = true;
-    if (i - 1 >= 0 && i + 1 <= 2 && document.getElementById("Button" + ((i - 1) * 3 + j)).value == c && c == document.getElementById("Button" + ((i + 1) * 3 + j)).value) return gameOver = true;
-    if (i - 1 >= 0 && j + 1 <= 2 && i + 1 <= 2 && j - 1 >= 0 && document.getElementById("Button" + ((i - 1) * 3 + j + 1)).value == c && c == document.getElementById("Button" + ((i + 1) * 3 + j - 1)).value) return gameOver = true;
-    if (j - 1 >= 0 && j + 1 <= 2 && document.getElementById("Button" + ((i) * 3 + j - 1)).value == c && c == document.getElementById("Button" + ((i) * 3 + j + 1)).value) return gameOver = true;
-    if (i - 1 >= 0 && j - 1 >= 0 && i - 2 >= 0 && j - 2 >= 0 && document.getElementById("Button" + ((i - 1) * 3 + j - 1)).value == c && c == document.getElementById("Button" + ((i - 2) * 3 + j - 2)).value) return gameOver = true;
-    if (i - 1 >= 0 && i - 2 >= 0 && document.getElementById("Button" + ((i - 1) * 3 + j)).value == c && c == document.getElementById("Button" + ((i - 2) * 3 + j)).value) return gameOver = true;
-    if (i - 1 >= 0 && j + 1 <= 2 && i - 2 >= 0 && j + 2 <= 2 && document.getElementById("Button" + ((i - 1) * 3 + j + 1)).value == c && c == document.getElementById("Button" + ((i - 2) * 3 + j + 2)).value) return gameOver = true;
-    if (j + 1 <= 2 && j + 2 <= 2 && document.getElementById("Button" + ((i) * 3 + j + 1)).value == c && c == document.getElementById("Button" + ((i) * 3 + j + 2)).value) return gameOver = true;
-    if (i + 1 <= 2 && j + 1 <= 2 && i + 2 <= 2 && j + 2 <= 2 && document.getElementById("Button" + ((i + 1) * 3 + j + 1)).value  == c && c == document.getElementById("Button" + ((i + 2) * 3 + j + 2)).value) return gameOver = true;
-    if (i + 1 <= 2 && i + 2 <= 2 && document.getElementById("Button" + ((i + 1) * 3 + j)).value == c && c == document.getElementById("Button" + ((i + 2) * 3 + j)).value) return gameOver = true;
-    if (i + 1 <= 2 && j - 1 >= 0 && i + 2 <= 2 && j - 2 >= 0 && document.getElementById("Button" + ((i + 1) * 3 + j - 1)).value  == c && c == document.getElementById("Button" + ((i + 2) * 3 + j - 2)).value) return gameOver = true;
-    if (j - 1 >= 0 && j - 2 >= 0 && document.getElementById("Button" + ((i) * 3 + j - 1)).value == c && c == document.getElementById("Button" + ((i) * 3 + j - 2)).value) return gameOver = true;
-    return gameOver;
 }
