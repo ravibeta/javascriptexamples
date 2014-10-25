@@ -58,7 +58,7 @@ app.get('/:collection/:entity', function(req, res) { //I
 
 
 app.post('/:collection', function(req, res) { //A
-    var object = generate_key(req.body);
+    var object = { "api_key": generate_key(req.body)};
     var collection = req.params.collection;
     collectionDriver.save(collection, object, function(err,docs) {
           if (err) { res.send(400, err); }
