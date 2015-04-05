@@ -1,0 +1,178 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="en" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.0rc1.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!--<script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="splunkjs/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="splunkjs/css/dashboard.css" />
+</head>
+<body>
+<body>
+<div id="content">
+<p>
+<label>Max size (MB) of entire Index : </label>
+<input id="maxTotalDataSizeMB" type="text" value="" placeholder="500" />
+</p>
+<p>
+<label>Max size (MB) of bucket : </label>
+<input id="maxDataSize" type="text" value="" placeholder="auto" />
+</p>
+<p>
+<label>Enabled:</label>
+<label> True: </label>
+<input type="radio" name="enabled" value="true" selected />
+<label> False: </label>
+<input type="radio" name="enabled" value="false" />
+</p>
+
+<p>
+<label>Url:</label>
+<div id="url" ></div>
+</p>
+<p>
+<input type="submit" onclick="return modifyIndex();"/>
+</p>
+</div>
+<script type="text/javascript" src="splunkjs/splunk.min.js"></script>
+<link rel="stylesheet" type="text/css" href="splunkjs/css/bootstrap.css" />
+<script src="splunkjs/config.js"></script>
+<script>
+    var opts = {};
+    var username = opts.username    || "uidev";
+    var password = opts.password    || "uidev";
+    var scheme   = opts.scheme      || "https";
+    var host     = opts.host        || "10.5.250.38";
+    var port     = opts.port        || "8089";
+    var version  = opts.version     || "default";
+    var webapp   = opts.webapp      || "storage";
+    var owner    = opts.owner       || "admin";
+    var app      = opts.app         || "search";
+    var group    = opts.group       || "admin";
+    var sharing  = opts.sharing     || "admin";
+
+    var http     = new splunkjs.JQueryHttp();
+    var service = new splunkjs.Service(http, {
+        username: username,
+        password: password,
+        scheme: scheme,
+        host: host,
+        port: port,
+        version: version,
+        owner : owner,
+        app: app,
+        group: group,
+        sharing : sharing,
+
+    });
+        // Configure SplunkJS Stack
+        splunkjs.config({
+            proxyPath: "",
+            scheme: "",
+            host: host,
+            USERNAME: username,
+            authenticate: function(done) {
+                   console.log('service created');
+                   service.login(function(err, success) {
+                   if (err || !success) {
+                       console.log("Error in logging in" + err.status);
+                       done(err || "Login failed");
+                       return;
+                   }
+                });
+            }
+        });
+        require.config({
+           baseUrl: "https://" + host  + "/"  + webapp
+        });
+
+function modifyIndex(){
+               indexname = $("#url").html();
+               if (!indexname) return false;
+               indexname = indexname.split('/');
+               if (!indexname) return false;
+               indexname = indexname[indexname.length-1];
+               indexname = indexname.trim('/');
+               if (indexname=="") return false;
+                service.owner = "nobody";
+                service.app = "system";
+                service.group = "admin";
+                  var action = "";
+                  if ($('input:radio[name=enabled]:checked').val() != "true"){
+                       action = "/disable";
+                  } else {
+                       action = "/enable";
+                  }
+                  var enableDisableEndpoint = new splunkjs.Service.Endpoint(service, "data/indexes/"+indexname+action);
+                  enableDisableEndpoint.post("",{}, function (err,response) {
+                                  if (err) console.log(err.response.statusCode + ":" + err.error);
+                                  if (response) console.log(response.data.entry[0].contents);
+                                  });
+                var params = {"maxDataSize":$("#maxDataSize").val(),"maxTotalDataSizeMB": $("#maxTotalDataSizeMB").val()};
+                var endpoint = new splunkjs.Service.Endpoint(service, "data/indexes/"+indexname); 
+                endpoint.post("",
+                              params,
+                              function(err, response) {
+                        if (err) {
+                           console.log(err.response.statusCode + ":" + err.error);
+                           return false;
+                        }
+                        else {
+                           console.log(response.data);
+                           setIndexProps(response);
+                           return true;
+                        }
+                       });
+}
+        var deps = [
+            //"jquery",
+            "splunkjs/mvc",
+        ];
+        require(deps, function(mvc) {
+               indexname = document.location.search.split("=")[1];
+               indexname = indexname.trim('/');
+               service.owner = "nobody";
+               service.app = "system";
+               var endpoint = new splunkjs.Service.Endpoint(service, "data/indexes/"+indexname); 
+               endpoint.get("",
+                              {},
+                              function(err, response) {
+                                       if (err) {console.log(err.response.statusCode + ":" + err.error);}
+                                       else {
+                                          console.log(response.data.entry[0]["id"]);
+                                          var index = response.data.entry[0];
+                                          setIndexProps(response);
+                                       }
+                           });
+         });
+
+ function setIndexProps(response) {
+      var index = response.data.entry[0];
+      $("#url").html(index["id"]);
+      $("#maxDataSize").val(index.content["maxDataSize"]);
+      $("#maxTotalDataSizeMB").val(index.content["maxTotalDataSizeMB"]);  
+    var $radios = $('input:radio[name=enabled]');
+    if($radios.is(':checked') === false) {
+        if (index.content["disabled"] == false)
+        $radios.filter('[value=true]').prop('checked', true);
+        else
+        $radios.filter('[value=false]').prop('checked', true);
+    }
+    }
+</script>
+</body>
+</html>
