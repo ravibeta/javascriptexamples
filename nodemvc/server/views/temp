@@ -1,0 +1,7 @@
+  <% drinks.forEach(function(drink) { %>
+        <li><%= drink.name %> - <%= drink.drunkness %></li>
+    <% }); %>
+
+ - var items = JSON.parse(servers)
+ - for(var item in items)
+ p #{prop}: #{ob[prop]}
