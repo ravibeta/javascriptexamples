@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/screen.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+        <link rel="stylesheet" type="text/css" href="../stylesheets/cloud.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/tooltip.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/main.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/form.css" />
+        <link rel="stylesheet" type="text/css" href="../stylesheets/jqueryslidemenu.css" />
+        <link media="screen" rel="stylesheet" href="../stylesheets/simplemodal/basic/css/demo.css" type="text/css">
+        <link media="screen" rel="stylesheet" href="../stylesheets/simplemodal/basic/css/basic.css" type="text/css">
+        <script type="text/javascript" src="../javascripts/jquery.js"></script>
+	<script type="text/javascript" src="../javascripts/tablesorter/jquery-latest.js"></script>
+        <script type="text/javascript" src="../javascripts/jqueryslidemenu.js"></script> 
+        <script type="text/javascript" src="../javascripts/simplemodal/basic/js/basic.js"></script>
+        <script type="text/javascript" src="../javascripts/simplemodal/basic/js/jquery.simplemodal.js"></script>
+	<link rel="stylesheet" type="text/css" href="../javascripts/tablesorter/blue/style.css" />
+
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+</head>
+
+<body>
+
+<div class="container main_wrapper" id="page">
+
+
+        <div class="row_6">
+                <div class="company_logo">
+                        <img class="image" src="../images/logo.png" height="64" width="39">
+                        <h2>
+                                <span style="font-weight: normal;" class="span">IT Cloud Physical&nbsp;</span>
+                        </h2>
+                </div>
+                <p>
+                        <span style="font-family: Tahoma, Geneva, sans-serif; position: relative; top: 10px; " class="span5">
+                                <span style="color: rgb(245, 240, 245); font-size: 23px; line-height: 23px;top:-5px;left:20px;position:relative; ">Cluster Service</span>
+                        </span>
+                </p>
+                <p style="position:relative;text-align:right;color:#fff;font-family: Tahoma, Geneva, sans-serif;margin-right:10px;">Welcome, 
+                   {{firstname}}&nbsp;{{lastname}}
+		</p>
+        </div>
+
+	<div id="myslidemenu" class=" jqueryslidemenu" style='width: 60%'>
+<ul>
+	        <li><a href="#">My Clusters</a></li>
+  		       <!-- <ul>
+  		            <li><a href="#">Link</a></li>
+  			        <li><a href="#">Link</a></li>
+  			        <li><a href="#">Link</a></li>
+  		        </ul>
+                     </li>-->
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Support</a></li>
+	</div><!-- mainmenu -->
+        <div class='content'>
+ {{ content }}
+        </div>
+	<div class="clear"></div>
+        <div class="copyright">
+                <i class="paragraph2">
+                     <span style="font-family: 'Trebuchet MS', sans-serif; " class="span6">© 2014 All Rights Reserved. </span>
+                     <span class="privacy_policy privacy_policyspanCopy">
+                         <span style="font-family: 'Trebuchet MS', sans-serif;">Privacy Policy.</span>
+                     </span>
+                </i>
+        </div>
+</div><!-- page -->
+<script type='text/javascript'>
+	$("#outer").click(function(){
+		var option = $("#outer").val();
+		if(option == 'advanced')
+			window.location.href = '/?p=advanced';
+		else if(option == 'public')
+			window.location.href = '/amp';
+	});
+</script>
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/piechart.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="//code.jquery.com/jquery-1.11.2.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,30 @@
+div.pager {
+	padding: 10px 0 10px 40%;
+	/*background-color: #D6D2C2;*/
+	background-color: #FFFFFF;
+	text-align: center;
+	width:60%;
+}
+div.pager span {
+	/*padding: 0 5px 0 5px;*/
+}
+div.pager .prev {
+	width: auto;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+div.pager .next {
+	width: auto;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+div.pager input {
+	font-size: 8px;
+	width: 30px;
+	background-color: #fff;
+	border: 0px solid #330000;
+	text-align: center;
+}
+
+
+  
