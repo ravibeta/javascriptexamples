@@ -66,6 +66,10 @@
 </style>
 <div class="listserver" style="padding:0px;width:100%;font-family:Tahoma,Geneva,sans-serif">
     <h2 style="color:#FFF;font-size:1.6em;margin:10px 15px 0px 15px;padding:10px;background-image:linear-gradient(to bottom, #756C75 88%, #756C75 97%)">List Clusters</h2>
+            <div id="msgBox" class="" style="display:none; width: 700px; margin-bottom: 15px; top:10px;">
+           <div id="message" class='error' style="margin-left: 20px; width: 126%; border: 2px solid; padding: 5px 0 5px 5px;">{{message}}</div>
+           <div style="clear:both"></div>
+       </div>
 <table border="0" ><!--class="pure-table">-->
 <tr>
 <td width="200px">
@@ -114,10 +118,6 @@
 LIST_OF_CLUSTERS
     </tbody>
 </table>
-        <div id="msgBox" class="" style="display:none; width: 700px; margin-bottom: 15px;">
-           <div id="message" class='error' style="margin-left: -20px; width: 126%; border: 2px solid; padding: 5px 0 5px 5px;"></div>
-           <div style="clear:both"></div>
-       </div>
     <div class="form row buttons" style="margin: 10px 0px; width: 110px; min-height: 32px;">
         <table><tr><td>
         <input type="button" id="btnAddcluster" class='' name="yt1" value="Create Cluster" style='background-color: #7a0d0d;color: #fff; border-radius: 5px;padding: 5px; width: 130px;'>
@@ -158,9 +158,13 @@ $(document).ready(function(){
         //else if(action === 'detail')
         //    detailCluster(name);
     });
-
+    renderFlash("{{message}}");
 });
-
+function renderFlash(msg){
+ if (msg != ""){
+  $('#msgBox').show();
+}
+}
 function manageGroup(){
   var win = window.open('https://groupmanager.com/view-users.html#getUserId', '_blank');
   win.focus();
