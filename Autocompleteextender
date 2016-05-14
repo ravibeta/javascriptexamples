@@ -1,0 +1,43 @@
+# server side code 
+
+// Load the http module to create an http server.
+var http = require('http');
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
+});
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+server.listen(8000);
+server.get("/autocomplete/", function (request, response) {
+  response.send(["hello","world"]); // sample autocomplete
+});
+
+// Put a friendly message on the terminal
+console.log("Server running at http://127.0.0.1:8000/");
+
+
+#autocompleteExtender
+in javascript
+
+#html/css
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1- transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server"> 
+<title></title>
+</head>
+<body> 
+<form id="form1" runat="server"> 
+<div>
+<form>
+Department:
+<TextBox ID="txt_dept" runat="server">
+</TextBox>
+</form>
+<ajaxToolkit:AutoCompleteExtender ID="ac1" runat="server" Enabled="true" TargetControlID="txt_dept" ServicePath="WebService.asmx" ServiceMethod="getCompleteDept" MinimumPrefixLength="2" CompletionSetCount="10">
+</ajaxToolkit:AutoCompleteExtender> </div> 
+</form>
+</body>
+</html>
