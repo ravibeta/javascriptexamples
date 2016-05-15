@@ -42,6 +42,9 @@ Department:
 <script>
 jQuery("input.txt_dept").autocomplete({
     source: function (request, response) {
+        if(validate(request.term)==false){
+           response([]);return;
+        }
         jQuery.get("/autocomplete/", {
             query: request.term
         }, function (data) {
