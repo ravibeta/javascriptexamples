@@ -1,43 +1,55 @@
-# server side code 
+// server side code 
+var express = require('express');
+var app = express();
 
-// Load the http module to create an http server.
-var http = require('http');
-
-// Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello World\n");
+app.get('/', function(req, res){
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'me',
+  password : 'secret',
+  database : 'my_db'
+});
+connection.connect();
+ connection.query('SELECT dept_name from departments where dept_name like ' + req.query.term +'%' AS solution', function(err, rows, fields) {
+  if (err) throw err;
+ var results = [];
+ for (int i =0; i < rows.Length; i++)
+       results.push(rows[i].solution);
+ console.log('The solution is: %o', results);
+ res.send(results);
+});
+ 
+connection.end();
 });
 
-// Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(8000);
-server.get("/autocomplete/", function (request, response) {
-  response.send(["hello","world"]); // sample autocomplete
-});
-
-// Put a friendly message on the terminal
-console.log("Server running at http://127.0.0.1:8000/");
+app.listen(8000);
 
 
-#autocompleteExtender
-in javascript
-
-#html/css
+<!-- clientside -->
+<!-- html/css/javascript -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1- transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server"> 
+<head> 
 <title></title>
 </head>
 <body> 
-<form id="form1" runat="server"> 
-<div>
 <form>
 Department:
-<TextBox ID="txt_dept" runat="server">
-</TextBox>
+<input type="text" id="txt_dept" style="width:100px">
+</input>
 </form>
-<ajaxToolkit:AutoCompleteExtender ID="ac1" runat="server" Enabled="true" TargetControlID="txt_dept" ServicePath="WebService.asmx" ServiceMethod="getCompleteDept" MinimumPrefixLength="2" CompletionSetCount="10">
-</ajaxToolkit:AutoCompleteExtender> </div> 
-</form>
+<script>
+jQuery("input.txt_dept").autocomplete({
+    source: function (request, response) {
+        jQuery.get("/autocomplete/", {
+            query: request.term
+        }, function (data) {
+            response(data);
+        });
+    },
+    minLength: 2
+});
+</script>
 </body>
 </html>
