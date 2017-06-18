@@ -1,0 +1,124 @@
+<style>
+  body {
+  padding-top: 80px;
+  text-align: center;
+  font-family: monaco, monospace;
+  background: url(http://media.giphy.com/media/Jrd9E2kuPuOYM/giphy.gif) 50%;
+  background-size: cover;
+}
+h1, h2 {
+  display: inline-block;
+  background: #fff;
+}
+h1 {
+  font-size: 30px
+}
+h2 {
+  font-size: 20px;
+}
+span {
+  background: #fd0;
+}
+textarea#text {
+  width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(../images/bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        resize: none;
+}
+#chatbox span {
+  display: inline-block;
+  width: 5em;
+  border: 1px solid black;
+  color: white;
+}
+</style>
+<link rel="stylesheet" type="text/css" href=" https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+<h1 style="width:460px;">Welcome to <span>Text Summarizer</span></h1><br>
+<h2 style="width:460px;background: black; color:white; text-align:justify;">If you don't have time to read, enter text in the input and a summary will be attempted.</h2><br>
+<form name="message" id="message">
+<textarea name="text" maxlength="5000" autocomplete="off" type="text" id="text" rows="4" cols="30" style="width: 460px; overflow-y: scroll;">
+Enter your text here ...</textarea>
+<br/>
+<p style="margin-left: 370px;"><input name="submitmsg" type="submit"  id="submitmsg" value="Summarize" /></p>
+</form>
+
+<div id="chatbox" style="display: inline-block; width: 450px; text-align: auto; border: 1px solid white; color: white;"></div>
+<div id="spinner"><img src="../images/schiphol.gif"/></div>
+<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+<script type="text/javascript"> 
+function setbg(color)
+{
+document.getElementById("text").style.background=color
+}
+$("#submitmsg").click(function() {
+    /* done via serverside but just to share concept */
+    var data = $("#message").serialize();
+    console.log(data);
+    $.ajax({
+        url: "/add/",
+        data: data,
+        dataType: 'json',
+        async: true,
+        type: "POST",
+        timeout: 120000,
+        beforeSend: function(jqXHR, settings) {
+                    $("#spinner").show();
+                    },
+        success: function(data, status, jqXHR) {
+            $("#spinner").hide();
+            $('#chatbox').html("");
+            $('#chatbox').show("");
+            $('#chatbox').html((data.summary && data.summary != "") ? data.summary : "No Summary");
+        },
+        error: function(data) {
+            $("#spinner").hide();
+            $("#chatbox").show();
+            $('#chatbox').html("No Summary");
+            console.log(data);
+            //window.location.reload();
+        },
+       done: function( data, textStatus, jqXHR ) {
+            //window.location.reload();
+       },
+       complete : function (){
+            //window.location.reload();
+            },
+      });
+});
+$(document).ready(function(){
+ $("#spinner").hide();
+ $("#chatbox").hide();
+ (function() {
+   "use strict";
+   
+   window.addEventListener("load", function() {
+     document.getElementById("message").addEventListener("submit", function(event) {
+       event.target.checkValidity();
+       event.preventDefault(); // Prevent form submission and contact with server
+       event.stopPropagation();
+     }, false);
+   }, false);
+ }());
+   var max = 5000;
+    $('textarea.max').keypress(function(e) {
+        if (e.which < 0x20) {
+            // e.which < 0x20, then it's not a printable character
+            // e.which === 0 - Not a character
+            return;     // Do nothing
+        }
+        if (this.value.length == max) {
+            e.preventDefault();
+        } else if (this.value.length > max) {
+            // Maximum exceeded
+            this.value = this.value.substring(0, max);
+        }
+    });
+});
+</script>
