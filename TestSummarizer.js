@@ -23,7 +23,7 @@ function handleFailure(err) {
 }
  
 function hasSummary() {
-    return browser.findElement(webdriver.By.div[@id='chatbox']).getText() == `Why cyclists should be able to roll through stop signs and ride through red lights While it's obviously reckless for them to blow through an intersection when they 
+    return browser.findElement(webdriver.By.id('chatbox')).getText() == `Why cyclists should be able to roll through stop signs and ride through red lights While it's obviously reckless for them to blow through an intersection when they 
 
 don't have the right of way, research and common sense say that slowly rolling through a stop sign on a bike Some places in the US already allow cyclists to treat stop signs as yields, and red lights as stop signs, and these rules are no more 
 
