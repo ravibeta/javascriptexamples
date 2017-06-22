@@ -50,7 +50,7 @@ If a cyclist approaches a red light, meanwhile, he or she needs to stop fully. A
 
 redlight is a stop sign.
 This doesn't mean that a cyclist is allowed to blast through an intersection at full speed which is dangerous for pedestrians, the cyclist, and pretty much everyone involved. This isn't allowed in Idaho, and it's a terrible idea everywhere.
-`
+`;
 browser.findElement(webdriver.By.name('text')).sendKeys(text);
 browser.findElement(webdriver.By.name('submitmsg')).click();
 browser.wait(hasSummary, 2000).then(clickLink).then(logTitle).then(closeBrowser, handleFailure);
