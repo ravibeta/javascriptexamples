@@ -98,7 +98,6 @@ app.get('/add', function (req, res){
 });
 /*
 app.get('/clusterslist/', function (req, res){
-      //if(!req.session.currentUser){res.redirect("https://adobe-stage.okta.com/app/template_saml_2_0/exk13st3fkyBqGs8Z1d8/sso/saml");}
       if(!req.session.currentUser){res.redirect(login_url);}
       //console.log('session='+req.session);
       //console.log('user='+req.session.currentUser);
