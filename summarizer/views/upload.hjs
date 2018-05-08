@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Shrink.Text - Shrink.Text</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/stylesheets/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/Content/Tiles.css" rel="stylesheet" type="text/css" />
+
+        <script src="/Scripts/modernizr-2.6.2.js" type="text/html"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.js"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+
+<script src="http://code.jquery.com/ui/1.8.23/jquery-ui.min.js" integrity="sha256-sEFM2aY87nr5kcE4F+RtMBkKxBqHEc2ueHGNptOA5XI=" crossorigin="anonymous"></script>
+<!---->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.21.0/js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.21.0/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.21.0/js/jquery.fileupload.js"></script>
+<!---->
+
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+<!--
+                <div class="float-left">
+                    <p class="site-title"><a href="/">Shrink.Text</a></p>
+                </div>
+-->
+
+                <div class="float-right">
+<!--
+            <section id="login">
+                            <ul>
+        <li><a href="/" id="registerLink">Register</a></li>
+        <li><a href="/" id="loginLink">Log in</a></li>
+    </ul>
+
+                    </section>
+-->
+                    <nav>
+                        <ul id="menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/">Summarize</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Shrink.Text</h1>
+                <h2>Your best text summarization tool.</h2>
+            </hgroup>
+        </div>
+    </section>
+
+            <section class="content-wrapper main-content clear-fix">
+
+
+
+    <header class="m0a402">
+
+     <div class="a109cfcont">
+       <div class="row">
+            <div class="a109cf-lg-8 a109cf-md-10 mx-auto">
+                <div class="siteha4020">
+                        <h1>Shrink.Text</h1>
+               </div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="a109cf-lg-8 a109cf-md-10 mx-auto">
+                <div class="siteha4020">
+
+               </div>
+           </div>
+        </div>
+   </div>
+    </header>
+<table style="width:500px; align:center; border=0;">
+<tr>
+<div class="service-block">
+    <div class="">
+        <div>
+            <div>
+            <p>You also have the ability to upload a file for text summarization.</p>
+<p>The files you input can be in one of the following formats - pdf, doc, csv, eml, epub, json, html, msg, rtf, and txt. We don't limit the file size but we recommend smaller files since you get immediate summary rather than having to wait for the processing of the whole file. Most files allow paging and it is easy to split the files in pages, so this may be something to help with large files.</p>
+            <p>Thank you for visiting this service and happy shrinking text to gists.</p>
+            <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>     <!DOCTYPE html>
+</tr>
+<tr>
+<td width="50%">
+<style>
+  body {
+  padding-top: 80px;
+  text-align: left;
+  /*font-family: monaco, monospace;*/
+  /* background: url(http://media.giphy.com/media/Jrd9E2kuPuOYM/giphy.gif) 50%;*/
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  background-size: cover;
+  color: black;
+}
+h1, h2 {
+  display: inline-block;
+  /*background: #fff;*/
+}
+h1 {
+  font-size: 30px
+}
+h2 {
+  font-size: 14px;
+  font-family: Tahoma, sans-serif;
+}
+span {
+  background: #c8c8c8; /*#fd0;*/
+}
+.service-block ul{text-align: left; font-size: 14px; color: #999; font-weight: 300; padding-left: 20px;}
+
+textarea#text {
+  width: 360px;
+        height: 660px;
+        border: 3px solid #cccccc;
+        padding: 5px;
+        font-family: Tahoma, sans-serif;
+        /* background-image: url(../images/bg.gif);*/
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        resize: none;
+}
+#chatbox span {
+  /*display: inline-block;*/
+  width: 360px;
+  height: 660px;
+  border: 1px solid black;
+  color: black;
+  font-color: black;
+  background: white;
+}
+</style>
+<link rel="stylesheet" type="text/css" href=" https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+<h1 style="width:460px;">Welcome to <span>Shrink.Text</span></h1><br>
+<h2 style="width:460px;background: white; color:black; text-align:justify;">If you don't have time to read, enter text in the input and a summary will be attempted.</h2><br>
+<form name="message" id="message">
+<div id="progress" class="progress">
+    <div class="progress-bar progress-bar-success">
+    </div>
+</div>
+<div id="files" class="files">
+</div>
+<input id="fileupload" type="file" name="files[]" data-url="/upload" multiple>
+<!--<script>$('#fileupload').fileupload({ dataType: 'json' })</script>-->
+</form>
+</td>
+<td width="50%">
+<div id="chatbox" rows=4 cols=30 style="padding-top: 80px; width: 445px; overflow-y: scroll;height: 620px;border: 1px solid black;color: black;font-color: black;background: white; text-align: auto;"></div>
+</td>
+</tr>
+</table>
+    <p class="copyright a109cf-muted">Copyright &copy; Shrink.Text 2017.</p>
+            </section>
+        </div>
+
+<script src="http://code.jquery.com/ui/1.8.23/jquery-ui.min.js" integrity="sha256-sEFM2aY87nr5kcE4F+RtMBkKxBqHEc2ueHGNptOA5XI=" crossorigin="anonymous"></script>
+<!---->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.21.0/js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.21.0/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.21.0/js/jquery.fileupload.js"></script>
+<!---->
+
+<script type="text/javascript">
+$(document).ready(function(){
+ $("#spinner").hide();
+ $("#chatbox").hide();
+ (function() {
+   "use strict";
+    var url = '/upload/';
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+                    $.ajax({
+        url: "/processfile/",
+        data: {'name':file.name},
+        dataType: 'json',
+        async: true,
+        type: "POST",
+        timeout: 120000,
+        beforeSend: function(jqXHR, settings) {
+                    $("#spinner").show();
+                    },
+        success: function(data, status, jqXHR) {
+            $("#spinner").hide();
+            $('#chatbox').html("");
+            $('#chatbox').show("");
+            $('#chatbox').html((data.summary && data.summary != "") ? data.summary : "No Summary");
+            // alert(data.summary);
+        },
+        error: function(data) {
+            $("#spinner").hide();
+            $("#chatbox").show();
+            $('#chatbox').html("No Summary");
+            console.log(data);
+            // alert(data);
+            //window.location.reload();
+        },
+       done: function( data, textStatus, jqXHR ) {
+            //window.location.reload();
+            // alert(done);
+       },
+       complete : function (){
+            //window.location.reload();
+            },
+      });
+
+            });
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+ }());
+});
+</script>
+    </body>
+</html>
