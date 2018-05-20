@@ -1,58 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Shrink.Text - Shrink.Text</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/stylesheets/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/Content/Tiles.css" rel="stylesheet" type="text/css" />
+
+        <script src="/Scripts/modernizr-2.6.2.js" type="text/html"></script>
+<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" /> -->
+
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+<!--
+                <div class="float-left">
+                    <p class="site-title"><a href="/">Shrink.Text</a></p>
+                </div>
+-->
+
+                <div class="float-right">
+<!--
+            <section id="login">
+                            <ul>
+        <li><a href="/" id="registerLink">Register</a></li>
+        <li><a href="/" id="loginLink">Log in</a></li>
+    </ul>
+
+                    </section>
+-->
+                    <nav>
+                        <ul id="menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/full">Full</a></li>
+                            <li><a href="/upload">Upload</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Shrink.Text</h1>
+                <h2>Your best text summarization tool.</h2>
+            </hgroup>
+        </div>
+    </section>
+
+            <section class="content-wrapper main-content clear-fix">
+    <header class="m0a402">
+
+     <div class="a109cfcont">
+       <div class="row">
+            <div class="a109cf-lg-8 a109cf-md-10 mx-auto">
+                <div class="siteha4020">
+                        <h1>Shrink.Text</h1>
+               </div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="a109cf-lg-8 a109cf-md-10 mx-auto">
+                <div class="siteha4020">
+
+               </div>
+           </div>
+        </div>
+   </div>
+    </header>
+<table style="width:500px; align:center; border=0;">
+<tr>
+<div class="service-block">
+    <div class="">
+        <div>
+            <div>
+            <p>We believe reading should be effortless. When we have several pages to read, even the thought of getting through them could become daunting to some. Others who can read through books like a breeze might not need this service. For the majority time-pressed phone-addicted, chat-friendly text readers, this service aims to condense large amounts of text to a nice summary. </p>
+            <p>This text summarization service is provided with the help of state of the art machine learning and natural language processing techniques. While you can read more about this in our <a href="https://1drv.ms/w/s!Ashlm-Nw-wnWtkN701ndJWdxfcO4">whitepaper</a>, we feel excited to inform you that this service comes from a software engineering practice. Consequently we believe you will be best served by the approach here than anywhere else.</p>
+            <p>We want to give you the convenience to point to your text so we take care of processing it. Your text is used only for the purpose of generating a summary. We neither keep your text nor do we collect any information about you. Since we don't keep any information about you or your text, we merely offer you the assistant to read and condense your text. We believe you will be making a habit of using this service. When you do, you are encouraged to sign up for an account so we may help with your history.</p>
+            <p>Thank you for visiting this service and happy shrinking text to gists.</p>
+            <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>     <!DOCTYPE html>
+</tr>
+<tr>
+<td width="50%">
 <style>
   body {
   padding-top: 80px;
-  text-align: center;
-  font-family: monaco, monospace;
-  background: url(http://media.giphy.com/media/Jrd9E2kuPuOYM/giphy.gif) 50%;
+  text-align: left;
+  /*font-family: monaco, monospace;*/
+  /* background: url(http://media.giphy.com/media/Jrd9E2kuPuOYM/giphy.gif) 50%;*/
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
   background-size: cover;
+  color: black;
 }
 h1, h2 {
   display: inline-block;
-  background: #fff;
+  /*background: #fff;*/
 }
 h1 {
   font-size: 30px
 }
 h2 {
-  font-size: 20px;
+  font-size: 14px;
+  font-family: Tahoma, sans-serif;
 }
 span {
-  background: #fd0;
+  background: #c8c8c8; /*#fd0;*/
 }
+.service-block ul{text-align: left; font-size: 14px; color: #999; font-weight: 300; padding-left: 20px;}
+
 textarea#text {
-  width: 600px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-image: url(../images/bg.gif);
-	background-position: bottom right;
-	background-repeat: no-repeat;
+  width: 360px;
+        height: 660px;
+        border: 3px solid #cccccc;
+        padding: 5px;
+        font-family: Tahoma, sans-serif;
+        /* background-image: url(../images/bg.gif);*/
+        background-position: bottom right;
+        background-repeat: no-repeat;
         overflow-y: scroll;
         overflow-x: scroll;
         resize: none;
 }
 #chatbox span {
-  display: inline-block;
-  width: 5em;
+  /*display: inline-block;*/
+  width: 360px;
+  height: 660px;
   border: 1px solid black;
-  color: white;
+  color: black;
+  font-color: black;
+  background: white;
 }
 </style>
 <link rel="stylesheet" type="text/css" href=" https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
-<h1 style="width:460px;">Welcome to <span>Text Summarizer</span></h1><br>
-<h2 style="width:460px;background: black; color:white; text-align:justify;">If you don't have time to read, enter text in the input and a summary will be attempted.</h2><br>
+<h1 style="width:460px;">Welcome to <span>Shrink.Text</span></h1><br>
+<h2 style="width:460px;background: white; color:black; text-align:justify;">If you don't have time to read, enter text in the input and a summary will be attempted.</h2><br>
 <form name="message" id="message">
-<textarea name="text" maxlength="5000" autocomplete="off" type="text" id="text" rows="4" cols="30" style="width: 460px; overflow-y: scroll;">
+<textarea name="text" maxlength="5000" autocomplete="off" type="text" id="text" rows="4" cols="30" style="width: 445px; overflow-y: scroll;">
 Enter your text here ...</textarea>
 <br/>
 <p style="margin-left: 370px;"><input name="submitmsg" type="submit"  id="submitmsg" value="Summarize" /></p>
 </form>
-
-<div id="chatbox" style="display: inline-block; width: 450px; text-align: auto; border: 1px solid white; color: white;"></div>
-<div id="spinner"><img src="../images/schiphol.gif"/></div>
+</td>
+<td width="50%">
+<div id="chatbox" rows=4 cols=30 style="padding-top: 80px; width: 445px; overflow-y: scroll;height: 620px;border: 1px solid black;color: black;font-color: black;background: white; text-align: auto;"></div>
+</td>
+</tr>
+</table>
+<!--<div id="spinner"><img src="../images/schiphol.gif"/></div>-->
 <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
-<script type="text/javascript"> 
+<script type="text/javascript">
 function setbg(color)
 {
 document.getElementById("text").style.background=color
@@ -76,16 +183,19 @@ $("#submitmsg").click(function() {
             $('#chatbox').html("");
             $('#chatbox').show("");
             $('#chatbox').html((data.summary && data.summary != "") ? data.summary : "No Summary");
+            // alert(data.summary);
         },
         error: function(data) {
             $("#spinner").hide();
             $("#chatbox").show();
             $('#chatbox').html("No Summary");
             console.log(data);
+            // alert(data);
             //window.location.reload();
         },
        done: function( data, textStatus, jqXHR ) {
             //window.location.reload();
+            // alert(done);
        },
        complete : function (){
             //window.location.reload();
@@ -97,7 +207,7 @@ $(document).ready(function(){
  $("#chatbox").hide();
  (function() {
    "use strict";
-   
+
    window.addEventListener("load", function() {
      document.getElementById("message").addEventListener("submit", function(event) {
        event.target.checkValidity();
@@ -116,9 +226,13 @@ $(document).ready(function(){
         if (this.value.length == max) {
             e.preventDefault();
         } else if (this.value.length > max) {
-            // Maximum exceeded
             this.value = this.value.substring(0, max);
         }
     });
 });
 </script>
+    <p class="copyright a109cf-muted">Copyright &copy; Shrink.Text 2017.</p>
+            </section>
+        </div>
+    </body>
+</html>
