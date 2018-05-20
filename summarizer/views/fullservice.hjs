@@ -1,0 +1,65 @@
+<h1 style="color: #5e9ca0;">Full-Service NLP Processing</h1>
+<p>Content is king regardless of where it is saved. When you use this web-service, you don't have to remember where the document was saved- whether it was your personal files, a database or a shared document library at work. Most of those locations may not even have rudimentary text processing capabilities much less the ability to summarize large collections of text. This means you don't have to search by terms but you can list by summaries and read entire books in a paragraph or two. This way you can browse several books to know which one you want to target your search on. This is a whole new paradigm that lets you list collections by condensed content.</p>
+<h2 style="color: #2e6c80;">Benefits:</h2>
+<p>This is a white glove service to all your text data so you may browse their condensed content. Since we use cloud services, you get all the benefits of managed, cloud-based, software as a service features.</p>
+<p>Click the <span style="background-color: #2b2301; color: #fff; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;">Summarize</span> button to summarize your text on-demand.</p>
+<h2 style="color: #2e6c80;">Some useful features:</h2>
+<ol style="list-style: none; font-size: 14px; line-height: 32px; font-weight: bold;">
+<li style="clear: both;"><img style="float: left;" src="https://html-online.com/img/01-interactive-connection.png" alt="interactive connection" width="45" /> Interactive browser experience</li>
+<li style="clear: both;"><img style="float: left;" src="https://html-online.com/img/02-html-clean.png" alt="html cleaner" width="45" />Searching and browsing</li>
+<li style="clear: both;"><img style="float: left;" src="https://html-online.com/img/03-docs-to-html.png" alt="Word to html" width="45" /> Word to text export</li>
+<li style="clear: both;"><img style="float: left;" src="https://html-online.com/img/04-replace.png" alt="replace text" width="45" /> Find and Replace content by summary</li>
+<li style="clear: both;"><img style="float: left;" src="https://html-online.com/img/05-gibberish.png" alt="gibberish" width="45" /> Merge collections by automatic syncing to your stores</li>
+<li style="clear: both;"><img style="float: left;" src="https://html-online.com/img/6-table-div-html.png" alt="html table div" width="45" /> Conversion from all document formats</li>
+</ol>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<h2 style="color: #2e6c80;">Text options:</h2>
+<table class="editorDemoTable">
+<thead>
+<tr>
+<td>Name of the feature</td>
+<td>Example</td>
+<td>Default</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text Summarization</td>
+<td>Summary from existing documents</td>
+<td>&nbsp;<strong>x</strong></td>
+</tr>
+<tr>
+<td>Document Synchronization</td>
+<td>Point us to your libraries and we will do the rest</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Universal access</td>
+<td>Software as a service</td>
+<td><strong>x</strong></td>
+</tr>
+<tr>
+<td>Subscription basis</td>
+<td>Managed service</td>
+<td>&nbsp;<strong>x</strong></td>
+</tr>
+<tr>
+<td>Elastic</td>
+<td>Backed by cloud services</td>
+<td><strong>x</strong></td>
+</tr>
+<tr>
+<td>Tagging</td>
+<td>Tag or label to retrieve later</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Export&nbsp;</td>
+<td>Export Summaries for sharing as documents</td>
+<td><strong style="font-size: 17px; color: #2b2301;">x</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
