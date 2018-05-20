@@ -1,0 +1,144 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<style>
+      .browser .bar .addressbar {
+      background-color: #fff;
+      height: 26px;
+      top: 8px;
+      width: 84%;
+      position: absolute;
+      margin-left: 3%;
+      border-radius: 5px; }
+  .browser {margin-bottom: 20px; }
+  .col-lg-3{width:100%}
+  .col-sm-6{width:100%}
+  .col-md-6 .browser .bar .addressbar;
+  .col-md-6 .browser .bar .settings:before;
+  .home-page{background: rgba(0, 0, 0, 0) url("/images/home-cover2.jpg") no-repeat fixed 0 0 / cover ;}
+
+.homepage-cover{background: rgba(0, 0, 0, 0) url("/images/home-cover2.jpg") no-repeat fixed 0 0 / cover ; color: #fff; text-align: center; border-bottom: 5px solid #fe8300;}
+.cover-overlay{background: rgba(254, 131, 0, 0.4) url("/images/overlay.png") repeat scroll 0 0; height: 100%; padding: 50px 15px;}
+.homepage-cover h1{margin-bottom: 10px; margin-top: 60px; text-transform: uppercase;}
+.homepage-cover p strong{font-size: 22px;}
+
+.homepage-cover .search-block{border-radius: 4px; background: rgba(0, 0, 0, 0.3); border: 1px solid #eee; padding: 15px;}
+  .home-section{padding: 40px 0; background: rgba(255,255,255,.95); font-size: 14px;}
+ .services-section{padding-left: 15px; padding-right: 15px;}
+.service-block{text-align: center;}
+.home-section .service-block{background: rgba(255, 255, 255, 0.7); padding: 25px 15px; border: 1px dashed #ddd; border-radius: 5px; margin-bottom: 30px;}
+.service-block span{ display: inline-block; margin-bottom: 20px; padding:40px; border-radius: 50%; border: 2px solid #ddd; background: #fff;}
+.service-block p{font-weight: bold;}
+.service-block img{margin: 0 auto;}
+.service-block .fa{float: left; margin-right: 15px;}
+
+.service-block ul{text-align: left; font-size: 14px; color: #999; font-weight: 300; padding-left: 20px;}
+.service-block li{margin-bottom: 5px;}
+@media all and (min-width:1201px){
+  .home-section .service-block{min-height: 470px;}
+}
+</style>
+<hr/>
+<div class="home-page">
+
+        <!-- Services Section -->
+        <section class="home-section services-section">
+
+                <div class="container">
+          <div class="section-title text-center"><h2>All text summarization benefits. All in one place</h2></div>
+                </div>
+                <div class="clearfix">
+<table>
+<tr>
+<td width="50%">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="service-block">
+                                        <span><img class="img-responsive" src="https://thumbs.dreamstime.com/z/business-infographic-summary-options-vector-template-report-statistics-68856977.jpg" width="50px" height="50px"></span>
+                                        <p>Salient content in summary</p>
+                                        <ul>
+                                                <li>Uses Word2vec to bring out the most important information</li>
+                                                <li>Trained from a large corpus of text</li>
+                                                <li>Best practice from NLP</li>
+                                                <li>Clear and concise summary</li>
+                                        </ul>
+                                </div>
+                        </div>
+</td>
+<td width="50%">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="service-block">
+                                        <span><img class="img-responsive" src="https://thumbs.dreamstime.com/z/business-infographic-summary-options-vector-template-report-statistics-68856977.jpg" width="50px" height="50px"></span>
+                                        <p>Available for programmatic access on demand</p>
+                                        <ul>
+                                                <li>Try it before requesting developer access</li>
+                                                <li>Lightweight and portable kit</li>
+                                                <li>Use the library for in-house projects</li>
+                                                <li>No License renewal fee</li>
+                                        </ul>
+                                </div>
+                        </div>
+</td>
+<tr>
+</tr>
+<td>
+
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="service-block">
+                                        <span><img class="img-responsive" src="https://thumbs.dreamstime.com/z/business-infographic-summary-options-vector-template-report-statistics-68856977.jpg" width="50px" height="50px"></span>
+                                        <p>Full service solution available</p>
+                                        <ul>
+                                                <li>Unlimited cloud storage and processing for full service accounts</li>
+                                                <li>File based processing for pdf, doc and other document formats</li>
+                                                <li>History maintained for all text summarization</li>
+                                                <li>Bulk processing of documents and corpus</li>
+                                        </ul>
+                                </div>
+                        </div>
+</td>
+<td>
+
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="service-block">
+                                        <span><img class="img-responsive" src="https://thumbs.dreamstime.com/z/business-infographic-summary-options-vector-template-report-statistics-68856977.jpg" width="50px" height="50px"></span>
+                                        <p>Integration with existing products and libraries</p>
+                                        <ul>
+                                                <li>Provides connectors to stores and libraries</li>
+                                                <li>Plugins for favorite productivity tools</li>
+                                                <li>Enable domain specific corpus training</li>
+                                                <li>Export summaries as documents for access control</li>
+                                        </ul>
+                                </div>
+                        </div>
+</td>
+</tr>
+</table>
+
+                </div>
+        </section>
+        <!-- Services Section End -->
+  <hr/>
+  <div class="toRead clearfix">
+                <h2>Shrink.Text - Free Text Summarizer</h2>
+                <p>Welcome to our free text summarizer which was designed for our own text processing needs because the competition is too thin and broken. There are many <a href="https://konghq.com/blog/list-of-30-summarizer-apis-libraries-and-software/" target="_blank">online text summarizer tools </a> on the web that were designed for various aspects, but none of them contained all of the features that users, developers and administrators want for their enterprise and organizational needs. We bring the best from software engineering practice in global high-technology companies.</p>
+
+                <p>We were very happy with the results and decided to make our text summarizer available to everyone for free.  We welcome you to share it in any way you want - links, social engineering applications, blog posts, and campaigns to name a few.</p>
+
+                <p>This tool has not been rigorously tested so we ask you to contact us if you find any bugs or if there's something not quite right with the website. </p>
+
+                <p>We look forward to making any necessary adjustments to make this tool work better for you.</p>
+
+                <h2>What's included in this text summarizer</h2>
+                <ul>
+                        <li>Ready to use text area for cut and paste <strong>in your web browser</strong>.</li>
+                        <li><strong>No registration</strong>, login, download and installation required</li>
+                        <li><strong>Concise summary</strong> guaranteed. The summary will also be relevant and precise.</li>
+                        <li><strong>Very small and fast</strong>. The site is using minimal processing for summarization so you don't have to wait at all.</li>
+                        <li><strong>Automatic stemming</strong>. There are many options to tune your text but you certainly do not have to scrub and canonicalize your text. We do it for you. </li>
+                        <li><strong>Mobile-ready</strong>. The website is easy to load on all mobile browsers. So you can pull text from wherever you like.</li>
+                        <li>Supports every major browsers, like Firefox, Chrome, IE, Edge, Opera and Safari. Cross browser HTML5 and CSS3 compatibility!</li>
+                </ul>
+
+                <p>This tool was designed to give you a nice summary for your text without ado.</p>
+                <p>It's not recommended for involved integrations which are better served with the managed full-service solution we plan to offer.</p>
+                <p>Word spelling mistakes and use of characters not recognized as literals are to be avoided</p>
+                <p><strong>Make sure you save this link because unfortunately we're still too hard to find on the web. This website is still small but who knows tomorrow...</strong></p>
+        </div>
+  <hr/>
